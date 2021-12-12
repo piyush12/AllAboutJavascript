@@ -37,6 +37,7 @@ var initialize = once(createApplication);
 
 var abc = function (a, b, c) {
   return [a, b, c];
+
 };
 
 function curry(fn) {
