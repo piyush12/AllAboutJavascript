@@ -1,3 +1,5 @@
+import { once } from "./function";
+
 // Chunk Array ['a', 'b', 'c', 'd'], 2 returns [['a', 'b'], ['c', 'd']]
 
 function chunkArray(array, chunkWith) {
@@ -10,12 +12,11 @@ function chunkArray(array, chunkWith) {
 
 chunkArray(["a", "b", "c", "d"], 2);
 
-
 // Difference difference([2, 1], [2, 3]) // [1]
 
-function difference(array1,array2){
-    const getDiff = array1.filter(arr => !array2.includes(arr));
-    console.log(getDiff)
+function difference(array1, array2) {
+  const getDiff = array1.filter((arr) => !array2.includes(arr));
+  console.log(getDiff);
 }
 
-difference([2, 1], [2, 3])
+difference([2, 1], [2, 3]);

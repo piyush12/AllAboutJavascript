@@ -1,0 +1,30 @@
+{
+  "name": "allaboutjavascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "String.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piyush12/AllAboutJavascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "datastructure",
+    "algorithm",
+    "polyfilss"
+  ],
+  "author": "piyush",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piyush12/AllAboutJavascript/issues"
+  },
+  "homepage": "https://github.com/piyush12/AllAboutJavascript#readme",
+  "dependencies": {
+    "parcel": "^2.1.1"
+  }
+}

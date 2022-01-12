@@ -15,7 +15,7 @@ function once(callBack) {
 
 // second way <----
 
-function once(callBack, context) {
+export function once(callBack, context) {
   let result;
   return function () {
     if (callBack) {
@@ -37,7 +37,6 @@ var initialize = once(createApplication);
 
 var abc = function (a, b, c) {
   return [a, b, c];
-
 };
 
 function curry(fn) {
