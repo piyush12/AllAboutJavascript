@@ -88,7 +88,6 @@ function ObjectCreate(obj) {
 // Deep Copy
 
 function deep_copy(source){
-  console.log("source",source)
   let copy = Array.isArray(source) ? [] : {};
 
   for(let key in source ){

@@ -67,3 +67,45 @@ ComputeAmount.prototype.value = function () {
 };
 
 const computeAmount = new ComputeAmount();
+
+
+/**
+ * Fix This
+ */
+
+ class User {
+  constructor(name) {
+    this.name = name;
+  }
+  getName() {
+    return this.name;
+  }
+  printSeatNumber() {
+    console.log('The seats have not been set');
+  }
+}
+
+class Meeting extends User{
+  constructor(users) {
+    super(users)
+    const presenter = users[0];
+    this.getPresenterName = presenter.getName.bind(presenter);
+    this.setUserSeats(users);
+  }
+  setUserSeats(users) {
+    for (let i = 0; i < users.length; i++) {
+      users[i].printSeatNumber = () => {
+        console.log(i);
+      }
+    }
+  }
+}
+
+const users = [new User('Jeni'), new User('Dan'), new User('Carol')];
+const meeting = new Meeting(users);
+
+// Broken results
+// console.log("meeting", meeting.getPresenterName(),meeting); // undefined (expected ‘Jeni’)
+// users[0].printSeatNumber(); // 3 (expected 0)
+// users[1].printSeatNumber(); // 3 (expected 1)
+// users[2].printSeatNumber(); // 3 (expected 2)
