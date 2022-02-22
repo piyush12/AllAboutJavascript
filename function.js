@@ -49,3 +49,20 @@ function curry(fn) {
 }
 
 var curried = curry(abc);
+
+
+function someFn() {
+  console.log(arguments);
+}
+
+Function.prototype.delay = function (delay) {
+  return function (...args) {
+    setTimeout(() => {
+      this(...args);
+    }, delay);
+  }.bind(this);
+};
+
+const someFnWithDelay = someFn.delay(2000);
+
+someFnWithDelay(1, 2, 3, 4, 5);

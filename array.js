@@ -56,6 +56,22 @@ function findDuplicates(array) {
   return [...removeDups];
 }
 
+const arr = [1, 1, 1, 1, 33, 33, 3, 2, 5, 6, 7, 8, 3, 2, 2, 2, 2];
+function deleteDuplicates(arr) {
+  const res = {};
+  for (let i = 0; i < arr.length; i++) {
+    const el = arr[i];
+    if (res[el]) {
+      res[el] += 1;
+    } else {
+      res[el] = 1;
+    }
+  }
+  return Object.keys(res).filter((key) => res[key] === 1);
+}
+
+deleteDuplicates(arr);
+
 function firstDuplicates(array) {
   let set = new Set();
   for (let value of array) {
@@ -69,3 +85,46 @@ function firstDuplicates(array) {
 
 // console.log(findDuplicates(duplicatesArray));
 // console.log(firstDuplicates(duplicatesArray));
+
+/**
+ * var grouped = _.groupBy(['one', 'two', 'three'], 'length')
+    console.log(grouped)
+  // output: {3: ["one", "two"], 5: ["three"]}
+ */
+function groupBy(array, itemBy) {
+  const itemGroupedBy = array.reduce((obj, item, i, a, k = item.length) => {
+    // console.log(obj, item, i, a, k);
+    return (obj[k] || (obj[k] = [])).push(item), obj;
+  }, {});
+
+  return itemGroupedBy;
+}
+
+// console.log(groupBy(["one", "two", "three"], "length"));
+
+function findMissingNumber(array) {
+  let minNumber = Math.min(...array);
+  let maxNumber = Math.max(...array);
+  //let set = new Set(array)
+  let missingNumber = [];
+  let hash = {};
+
+  for (let i = 0; i < array.length; i++) {
+    hash[array[i]] = array[i];
+  }
+  console.log(hash);
+
+  for (let i = minNumber; i <= maxNumber; i++) {
+    // if(!set.has(i)){
+    //   missingNumber.push(i)
+    // }
+    if (!hash[i]) {
+      missingNumber.push(i);
+    }
+  }
+  return missingNumber;
+}
+
+const numArr = [10, 11, 12, 14];
+
+// console.log(findMissingNumber(numArr));

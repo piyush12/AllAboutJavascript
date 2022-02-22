@@ -30,7 +30,8 @@ Array.prototype.forEachPolyfill = function (callback) {
 Array.prototype.MapPolyfill = function (callback) {
   let arr = [];
   for (let i = 0; i < this.length; i++) {
-    arr.push(callback(this[i], i, this));
+    const result = callback(this[i], i, this);
+    arr.push(result);
   }
   return arr;
 };
